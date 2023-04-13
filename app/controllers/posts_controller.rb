@@ -9,8 +9,9 @@ class PostsController < ApplicationController
   # end
 
   def create
-    Post.create(content: params[:content])
-    redirect_to action: :index  #追記した
+    # binding.pry
+    post = Post.create(content: params[:content])
+    render json:{ post: post }  #追記した
   end
-  
+
 end
